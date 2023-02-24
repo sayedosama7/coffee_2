@@ -1,0 +1,707 @@
+* {
+    -webbkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #DA9F5B;
+    --main-black: #33211D;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+}
+
+ul {
+    list-style: none;
+}
+
+/* start navbar */
+header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header .container::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    left: 0px;
+    bottom: 16px;
+    background-color: #a2a2a2;
+    width: calc(100% - 10px);
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a h1:hover {
+    color: #DA9F5B;
+}
+
+header a h1 {
+    color: white;
+    transition: 0.3s;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 20px 30px;
+    transition: 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+header nav ul a.active,
+header nav ul a:hover {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+
+.form {
+    border-left: 1px solid white;
+    margin-left: 10px;
+    padding-left: 20px;
+    text-align: center;
+    height: 30px;
+    width: 40px;
+    position: relative;
+}
+
+.form i {
+    color: white;
+}
+
+header nav .toggle-menu {
+    color: white;
+    font-size: 22px;
+}
+
+@media (min-width:768px) {
+    header nav .toggle-menu {
+        display: none;
+    }
+}
+
+@media (max-width:767px) {
+    header nav ul {
+        display: none;
+    }
+
+    header .container::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        left: 0px;
+        bottom: -10px;
+        background-color: #a2a2a2;
+        width: 100%;
+    }
+
+    header nav .toggle-menu:hover+ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #33211d77;
+    }
+
+    header nav .toggle-menu:hover+ul li a {
+        padding: 10px;
+        border-bottom: none;
+
+    }
+}
+
+/* end navbar */
+/* start landing */
+.landing {
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(51, 33, 29, 0.7), rgba(51, 33, 29, 0.7)), url("images/carousel-1.jpg");
+    background-size: cover;
+    background-color: var(--main-color);
+    position: relative;
+}
+
+.landing .text {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    padding: 50px;
+    color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.landing .text .content {
+    max-width: 500px;
+}
+
+
+
+.landing .text .content h2 {
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.landing .text .content h1 {
+    font-size: 70px;
+    font-weight: 900;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    letter-spacing: 30px;
+}
+
+@media (max-width:767px) {
+    .landing .text {
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .landing .text .content {
+        max-width: 100%;
+    }
+
+    .landing .text .content h1 {
+        font-size: 40px;
+        font-weight: normal;
+        margin-top: 50px;
+        margin-bottom: 40px;
+        letter-spacing: 10px;
+    }
+}
+
+.landing .text .content p {
+    font-size: 20px;
+}
+
+.landing .change-background {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.landing .fa-angle-left {
+    left: 30px;
+}
+
+.landing .fa-angle-right {
+    right: 30px;
+}
+
+.landing .bullets {
+    position: absolute;
+    left: 45%;
+    transform: translateY(-50%);
+    bottom: 30px;
+    display: flex;
+}
+
+.landing .bullets li {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    margin: 5px;
+    border-radius: 50%;
+}
+
+.landing .bullets li.active {
+    background-color: var(--main-color);
+    border-color: rgba(0, 0, 0, 0.582);
+
+}
+
+@media (max-width:767px) {
+    .landing .change-background {
+        display: none;
+    }
+
+    .landing .bullets li {
+        display: none;
+    }
+}
+
+@media (min-width:768px) and (max-width:992px) {
+    .landing .bullets li {
+        display: none;
+    }
+}
+
+/* end landing */
+/* start SERVICES */
+.services {
+    background-color: #FFFBF2;
+}
+
+.services .row {
+    margin: 30px;
+}
+
+.srv-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.services .srv-box {
+    display: flex;
+}
+
+.services .srv-box .srv-icon {
+    display: flex;
+    text-align: center;
+}
+
+.services .srv-box .srv-icon h4 {
+    margin: 0px;
+    padding-top: 10px;
+    color: var(--main-black);
+    max-width: 100%;
+}
+
+.services .srv-box .srv-icon i {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    max-width: 100%;
+    border-radius: 50%;
+    padding: 15px 13px;
+    background-color: var(--main-color);
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.srv-box img {
+    width: 150px;
+}
+
+.srv-box p {
+    margin-left: 20px;
+    max-width: 100%;
+}
+
+.main-services {
+    padding-top: 100px;
+    text-align: center;
+    position: relative;
+}
+
+.main-services h2 {
+    font-variant-numeric: normal;
+    font-size: 40px;
+    position: relative;
+    margin-bottom: 30px;
+    color: var(--main-color);
+}
+
+.main-services h1 {
+    width: 500px;
+    max-width: 100%;
+    margin: 0px auto 0px;
+    font-weight: 900;
+    font-size: 70px;
+    position: relative;
+    margin-bottom: 70px;
+    color: var(--main-black);
+}
+
+.main-services h1:before {
+    content: "";
+    height: 1px;
+    width: 600px;
+    max-width: 100%;
+    position: absolute;
+    background-color: var(--main-color);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -30px;
+}
+
+.main-services h1::after {
+    content: "";
+    height: 20px;
+    width: 20px;
+    max-width: 100%;
+    position: absolute;
+    background-color: var(--main-color);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -40px;
+    border-radius: 10%;
+    border: 1px solid var(--main-color);
+}
+
+@media (max-width: 767px) {
+
+    .services .srv-box .srv-icon {
+        margin: 20px;
+        justify-content: center;
+    }
+
+    .srv-box {
+        flex-direction: column;
+    }
+
+    .main-services h1 {
+        font-weight: 600;
+        font-size: 40px;
+    }
+
+    .main-services {
+        padding-top: 50px;
+    }
+}
+
+/* start SERVICES */
+
+/* start about us */
+.about {
+    text-align: center;
+    padding-bottom: 100px;
+    background-color: #FFFBF2;
+}
+
+.about img {
+    max-width: 100%;
+}
+
+.about_right,
+.about_left {
+    margin: 30px 0px;
+}
+
+.about_right h1,
+.about_left h1 {
+    color: var(--main-color);
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.about_right h5 {
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+.about_right button,
+.about_left button {
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    background-color: var(--main-black);
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+.about_left h5::before {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f00c';
+    font-weight: 900;
+    color: var(--main-color);
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+/* end about us */
+
+/* start of offer */
+.offer {
+    background-image: linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url("images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.offer h1 {
+    font-size: 70px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: var(--main-color);
+}
+
+.offer h2 {
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+.offer input {
+    width: 300px;
+    max-width: 100%;
+    height: 50px;
+}
+
+.offer input::placeholder {
+    padding-left: 30px;
+}
+
+.offer button {
+    width: 90px;
+    max-width: 100%;
+    height: 50px;
+    background-color: var(--main-color);
+    border: none;
+    color: var(--main-black);
+    margin-left: -4px;
+}
+
+@media (max-width:767px) {
+    .offer button {
+        width: 65px;
+    }
+
+    .offer input {
+        width: 220px;
+    }
+
+    .offer h1 {
+        font-size: 50px;
+        font-weight: 700;
+    }
+
+    .offer h2 {
+        font-size: 20px;
+    }
+}
+
+/* end of offer */
+
+/* start of menu */
+.menu {
+    background-color: #FFFBF2;
+}
+
+.menu .row {
+    margin-bottom: 50px;
+}
+
+.menu_box2 {
+    position: relative;
+}
+
+.menu_box2 img {
+    border-radius: 50%;
+}
+
+.menu_box2 h5 {
+    width: 50px;
+    height: 50px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    padding: 12px 12px;
+    position: absolute;
+    right: 0;
+}
+
+.srv-icon h4 {
+    margin-left: 10px;
+}
+
+.menu-text {
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+/* end of menu */
+
+/* start reservation */
+.reservation {
+    background-image: linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url("images/bg.jpg");
+    background-size: cover;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.reservation_left .text {
+    color: #fff;
+    padding-top: 150px;
+}
+
+.reservation_left .text h1 {
+    color: var(--main-color);
+    font-size: 60px;
+    font-weight: 900;
+}
+
+.reservation_left .text h2 {
+    color: var(--main-color);
+    font-size: 40px;
+}
+
+.reservation_left .text h5::before {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f00c';
+    font-weight: 900;
+    color: var(--main-color);
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.reservation_right {
+    padding-top: 80px;
+}
+
+.reservation_right h1 {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.reservation_right input {
+    margin: 10px;
+    width: 500px;
+    max-width: 100%;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    margin-left: 0px;
+}
+
+.reservation_right input::placeholder {
+    text-transform: capitalize;
+    padding-left: 20px;
+}
+
+.reservation_right input:focus {
+    outline: 1px solid #d8a263;
+}
+
+.reservation_right button {
+    width: 500px;
+    max-width: 100%;
+    height: 50px;
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+    text-transform: capitalize;
+    font-size: 20px;
+    margin-right: 7px;
+}
+
+@media (max-width:767px) {
+    .reservation_left .text {
+        padding-top: 50px;
+    }
+}
+
+/* end reservation */
+
+/* start testimonial */
+.testimonial {
+    margin-bottom: 50px;
+    background-color: #FFFBF2;
+}
+
+.test_box {
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+.test_box2 {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.test_box2 .text {
+    margin-left: 20px;
+}
+
+.test_box2 .text h2 {
+    color: var(--main-color);
+}
+
+/* end testimonial */
+
+/* start footer */
+.footer {
+    background-color: var(--main-black);
+}
+
+.footer span,
+.me-4 i,
+.footer2 h6,
+.p-4 {
+    color: var(--main-color);
+}
+
+.sayed_osama {
+    color: var(--main-color);
+    font-size: 25px;
+    font-weight: 500;
+    font-family: 'Pacifico', cursive;
+}
+
+.mb-4 p a {
+    text-decoration: none;
+}
+
+.link-secondary i {
+    text-decoration: none;
+    border: none;
+}
+
+.link-secondary {
+    color: transparent;
+}
+
+.p-4 a {
+    text-decoration: none;
+}
+
+.p-4 a:hover {
+    color: #fff;
+}
+
+@media (max-width:767px) {
+    .sayed_osama {
+        font-size: 18px;
+    }
+
+    .footer {
+        margin-top: 50px;
+    }
+}
+
+/* end footer */
