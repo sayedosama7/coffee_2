@@ -463,8 +463,12 @@ header nav .toggle-menu {
 }
 
 .offer h2 {
-    margin-bottom: 50px;
     color: #fff;
+}
+
+.offer .text {
+    margin-bottom: 50px;
+
 }
 
 .offer input {
@@ -484,6 +488,7 @@ header nav .toggle-menu {
     background-color: var(--main-color);
     border: none;
     color: var(--main-black);
+    margin-left: -4px;
 }
 
 @media (max-width:767px) {
